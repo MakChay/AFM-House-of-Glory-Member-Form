@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: 'https://bolt.new/static/og_default.png',
+        url: 'https://afm-house-of-glory-member-form.vercel.app/',
       },
     ],
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     images: [
       {
-        url: 'https://bolt.new/static/og_default.png',
+        url: 'https://afm-house-of-glory-member-form.vercel.app/',
       },
     ],
   },
