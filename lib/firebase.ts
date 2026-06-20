@@ -3,16 +3,19 @@ import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA2RZJLzCPxQehF9FtC_nEmQBU2DjL-aEo",
-  authDomain: "house-of-glory-form.firebaseapp.com",
-  projectId: "house-of-glory-form",
-  storageBucket: "house-of-glory-form.firebasestorage.app",
-  messagingSenderId: "725540763116",
-  appId: "1:725540763116:web:611b798163ed91bf0fbcc9",
-  measurementId: "G-QHMMQEE7CL"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
 
-const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+const app =
+  getApps().length === 0
+    ? initializeApp(firebaseConfig)
+    : getApps()[0];
 
 export const db = getFirestore(app);
 export const auth = getAuth(app);
