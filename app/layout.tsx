@@ -11,17 +11,17 @@ export const metadata: Metadata = {
   description: 'Professional data collection and management system for House of Glory.',
   openGraph: {
     images: [
-      {
-        url: 'https://afm-house-of-glory-member-form.vercel.app/',
+     {
+        url: "/afm_big_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "AFM House of Glory",
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    images: [
-      {
-        url: 'https://afm-house-of-glory-member-form.vercel.app/',
-      },
+    images: [ "/afm_big_logo.png"
     ],
   },
 };
