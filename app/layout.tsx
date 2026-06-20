@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
      {
-        url: "/afm_big_logo.png",
+        url: "https://afm-house-of-glory-member-form.vercel.app//afm_big_logo.png",
         width: 1200,
         height: 630,
         alt: "AFM House of Glory",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    images: [ "/afm_big_logo.png"
+    images: [ "https://afm-house-of-glory-member-form.vercel.app//afm_big_logo.png"
     ],
   },
 };
