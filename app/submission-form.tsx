@@ -87,12 +87,13 @@ const submissionSchema = z.object({
     .string()
     .min(1, 'Emergency contact number is required'),
 
-  consent: z.literal(true, {
-    errorMap: () => ({
-      message: 'You must accept before submitting.',
-    }),
-  }),
+  consent: z.boolean().refine((val) => val === true, {
+  message: 'You must accept before submitting.',
+}),
 });
+
+
+
 
 type SubmissionSchema = z.infer<typeof submissionSchema>;
 
