@@ -32,22 +32,49 @@ export default function AdminLogin() {
   }, [router]);
 
   async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!email || !password) {
-      toast.error('Please enter both email and password.');
-      return;
-    }
-    setLoading(true);
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      toast.success('Login successful!');
-      router.push('/admin/dashboard');
-    } catch (error: any) {
-      toast.error(error.message || 'Login failed. Please check your credentials.');
-    } finally {
-      setLoading(false);
-    }
+  e.preventDefault();
+  if (!email || !password) {
+    toast.error('Please enter both email and password.');
+    return;
   }
+  setLoading(true);
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    toast.success('Login successful!');
+    router.push('/admin/dashboard');
+  } catch (error: any) {
+    // Better error messages based on Firebase error codes
+    let errorMessage = 'Login failed. Please check your credentials.';
+    
+    switch (error.code) {
+      case 'auth/user-not-found':
+        errorMessage = 'No account found with this email. Please check your email or sign up.';
+        break;
+      case 'auth/wrong-password':
+        errorMessage = 'Incorrect password. Please try again.';
+        break;
+      case 'auth/invalid-email':
+        errorMessage = 'Invalid email address format. Please check your email.';
+        break;
+      case 'auth/too-many-requests':
+        errorMessage = 'Too many failed attempts. Please try again later.';
+        break;
+      case 'auth/network-request-failed':
+        errorMessage = 'Network error. Please check your internet connection.';
+        break;
+      case 'auth/user-disabled':
+        errorMessage = 'This account has been disabled. Please contact support.';
+        break;
+      default:
+        errorMessage = error.message || 'Login failed. Please try again.';
+    }
+    
+    toast.error(errorMessage);
+    console.error('Login error:', error.code, error.message);
+  } finally {
+    setLoading(false);
+  }
+}
 
   if (checkingAuth) {
     return (

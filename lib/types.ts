@@ -12,6 +12,17 @@ export interface Submission {
   notes?: string;
   createdAt: Date;
   updatedAt?: Date;
+  homeCellId?: string;
+  homeCell?: string;
+}
+
+export interface HomeCell {
+  id: string;
+  name: string;
+  leaders: string[];
+  contactNumbers: string[];
+  isActive: boolean;
+  createdAt: Date;
 }
 
 export interface SubmissionFormData {
