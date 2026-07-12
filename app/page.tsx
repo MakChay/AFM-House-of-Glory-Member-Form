@@ -25,6 +25,11 @@ export default function Home() {
                 Admin
               </Button>
             </Link>
+            <Link href="/home-cells">
+              <Button variant="ghost" size="sm" className="text-white hover:bg-white/10 hidden sm:inline-flex">
+                Home Cells
+              </Button>
+            </Link>
             <Link href="/form">
               <Button size="sm" className="bg-[hsl(50,70%,45%)] hover:bg-[hsl(50,70%,40%)] text-white border-0">
                 Submit Info
@@ -53,7 +58,7 @@ export default function Home() {
             The Glory of the present house will be greater than the Glory of the former house, says the Lord Almighty. And in this place I will grant peace, declares the Lord Almighty.
           </p>
           <p className="text-sm font-medium text-[hsl(50,70%,55%)] mb-10">
-            Haggai 2:9
+            — Haggai 2:9
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/form">
@@ -77,21 +82,14 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Pastor Image */}
           <div className="relative">
-            <div className="relative w-full max-w-md mx-auto aspect-[4/5] rounded-2xl overflow-hidden bg-[hsl(207,72%,30%)]/10 border-4 border-[hsl(207,72%,30%)]/10 shadow-2xl">
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
-                <div className="relative w-full h-full mb-4">
-                  <Image
-                    src="/Mr&Mrs Pastor.jpg"
-                    alt="Pastor & Mam' Mbuyazi"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <p className="text-sm font-medium text-[hsl(207,72%,30%)] dark:text-white/70 mb-2">
-                  Pastor & Mrs Mbuyazi
-                </p>
-                <div className="mt-6 w-16 h-1 bg-[hsl(50,70%,45%)] rounded-full" />
-              </div>
+            <div className="relative w-full max-w-md mx-auto aspect-[4/5] rounded-2xl overflow-hidden border-4 border-[hsl(207,72%,30%)]/10 shadow-2xl">
+              <Image
+                src="/Mr&Mrs Pastor.png"
+                alt="Pastor & Mam Mbuyazi"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
             {/* Decorative elements */}
             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[hsl(50,70%,45%)]/10 rounded-full blur-2xl" />
@@ -109,7 +107,7 @@ export default function Home() {
             </h3>
             <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
               <p>
-                We are a family of believers passionate about worship, community, and growing in faith together. Whether you are new to church or looking for a place to call home, we invite you to join us and experience God's love and presence.
+                We are a family of believers passionate about worship, community, and growing in faith together. Whether you are new to church or looking for a place to call home, we invite you to join us and experience God&apos;s love and presence.
               </p>
               <p>
                 Our church is built on the foundation of love, faith, and fellowship. We believe in creating a welcoming environment where everyone can grow spiritually and build meaningful relationships.
@@ -120,7 +118,7 @@ export default function Home() {
             </div>
             <div className="pt-4 border-t border-border">
               <p className="font-semibold text-[hsl(207,72%,20%)] dark:text-white">
-                Pastor T. Mbuyazi
+                — Pastor T. Mbuyazi
               </p>
               <p className="text-sm text-muted-foreground">
                 Senior Pastor, AFM House of Glory
@@ -138,7 +136,7 @@ export default function Home() {
               What We Believe
             </h3>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Our faith is built on the solid foundation of God's Word and the guiding principles of love, community, and spiritual growth.
+              Our faith is built on the solid foundation of God&apos;s Word and the guiding principles of love, community, and spiritual growth.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -166,7 +164,7 @@ export default function Home() {
               </div>
               <h4 className="text-lg font-semibold mb-2">Faith & Growth</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                We are committed to growing in our understanding of God's Word and deepening our personal relationship with Him.
+                We are committed to growing in our understanding of God&apos;s Word and deepening our personal relationship with Him.
               </p>
             </div>
           </div>
